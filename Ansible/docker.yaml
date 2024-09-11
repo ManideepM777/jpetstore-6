@@ -1,5 +1,5 @@
 - name: docker build and push
-  hosts: local  # Replace with the hostname or IP address of your target server
+  hosts: localhost  # Replace with the hostname or IP address of your target server
   become: yes  # Run tasks with sudo privileges
 
   tasks:
@@ -23,6 +23,3 @@
 
     - name: Push image
       command: docker push manideepm777/petstore:latest
-
-    - name: Run container
-      command: docker run -d --name pet1 -p 8081:8080 manideepm777/petstore:latest
